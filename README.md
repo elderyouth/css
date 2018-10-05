@@ -16,6 +16,8 @@
     - [ID Selectors](#id-selectors)
     - [JavaScript hooks](#javascript-hooks)
     - [Border](#border)
+    - [Inline Styles](#inline-styles)
+    - [Cross-Browser compatibility](#cross-browser-compatibility)
 1. [License](#license)
 
 ## Terminology
@@ -226,6 +228,43 @@ Use `0` instead of `none` to specify that a style has no border.
 ```
 **[⬆ back to top](#table-of-contents)**
 
+## Inline Styles
+Avoid at all cost using inline styling as it will stay out from the stylesheet standard and overwriting initial styles.
+Styles become harder to maintain and document.
+
+**Bad**
+
+```html
+<div style="color:#f00;float:left;">
+    Lorem Ipsum
+</div>
+<div style="color:#000;">
+    Foo Bar
+</div>
+<div style="color:#f00;">
+    Dolores Amit
+</div>
+```
+
+**Good**
+
+```css
+.foo{
+  color: #f00;
+}
+```
+
+## Cross-Browser compatibility
+Ensure your styles work well on all browsers such as IE, Opera, Chrome, etc..
+
+```css
+.foo{
+  -moz-
+  -webkit- 
+  -o- 
+  -ms- 
+}
+```
 
 ## License
 
