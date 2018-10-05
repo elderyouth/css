@@ -11,6 +11,7 @@
 1. [CSS](#css)
     - [Formatting](#formatting)
     - [Comments](#comments)
+    - [Bookmarks](#bookmarks)
     - [OOCSS and BEM](#oocss-and-bem)
     - [ID Selectors](#id-selectors)
     - [JavaScript hooks](#javascript-hooks)
@@ -102,11 +103,39 @@ Finally, properties are what give the selected elements of a rule declaration th
 
 ### Comments
 
-* Prefer line comments (`//` in Sass-land) to block comments.
+* Prefer line comments to block comments.
 * Prefer comments on their own line. Avoid end-of-line comments.
 * Write detailed comments for code that isn't self-documenting:
   - Uses of z-index
   - Compatibility or browser-specific hacks
+
+### Bookmarks
+* Organize styles using bookmarks made with the format `/*##*/` for developers to follow a flow of landmarks (e.g. header, footer, main)
+* Use bookmarks to note subsections of landmarks  `/*#0. foo/a) bar#*/`
+
+**Bad**
+
+```css
+//Header
+.foo{
+    //...
+ }
+```
+
+**Good**
+
+```css
+/*#1. Header#*/
+/*#1. Header/a) foo#*/
+.foo{
+    //...
+ }
+ 
+/*#1. Header/b) bar#*/
+.bar{
+    //...
+ }
+```
 
 ### OOCSS and BEM
 
